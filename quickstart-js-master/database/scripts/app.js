@@ -18,4 +18,14 @@ app.controller("ngtableCtrl", function ($scope, $http) {
         $scope.users = response.data;
         console.log($scope.users)
     });
+    
+    $scope.propertyName = 'score';
+    $scope.reverse = true;
+
+    $scope.sortBy = function(propertyName) {
+    	console.log("clicked");
+      $scope.reverse = ($scope.propertyName === propertyName) ? !$scope.reverse : false;
+      $scope.propertyName = propertyName;
+    };
+    
 });
